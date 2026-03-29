@@ -68,11 +68,18 @@ else
     echo -e "${GREEN}[PASSED]${NC} RAM: ${RAM_GB}GB."
 fi
 
-# 6. Tạo chữ ký xác thực file log
-echo -e "\n${YELLOW}--- Đang đóng gói báo cáo kỹ thuật... ---${NC}"
-HASH=$(sha256sum $LOG_FILE | awk '{print $1}')
-echo "--- END OF DATA ---" >> $LOG_FILE
-echo "Verification_Hash: $HASH" >> $LOG_FILE
+# 6. Xuất mã Hash ra file riêng và màn hình
+echo -e "\n${YELLOW}--- Đang niêm phong báo cáo kỹ thuật... ---${NC}"
+
+# Tạo file chữ ký riêng (.sig)
+sha256sum "$LOG_FILE" > "${LOG_FILE}.sig"
+
+# Khóa file log để tránh vô tình sửa đổi trên server
+chmod 444 "$LOG_FILE"
 
 echo -e "${GREEN}[Xong]${NC} Báo cáo: ${YELLOW}$LOG_FILE${NC}"
-echo -e "Vui lòng gửi file log này cho ${GREEN} (OmniShard Architect)${NC} để duyệt Node."
+echo -e "${GREEN}[Xong]${NC} File chữ ký: ${YELLOW}${LOG_FILE}.sig${NC}"
+echo -e "\n${RED}QUAN TRỌNG:${NC}"
+echo -e "Hãy gửi cả 2 file trên cho ${GREEN}Nguyễn Ngọc Hùng${NC}."
+echo -e "Hoặc copy mã Hash dưới đây để xác thực nhanh:"
+echo -e "${YELLOW}$(cat ${LOG_FILE}.sig | awk '{print $1}')${NC}\n"
