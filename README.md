@@ -3,7 +3,7 @@ Tác giả & Kiến trúc sư: Nguyễn Ngọc Hùng (OmniShard Architect)
 Công nghệ lõi: Omni-Sharding Threshold Protocol v1.0
 
 THÔNG BÁO BẢN QUYỀN & GIẤY PHÉP (IMPORTANT)
-Dự án OmniShard và bộ Tiêu chuẩn phần cứng đi kèm được bảo hộ bởi giấy phép GNU AGPLv3.
+bộ tài liệu về Tiêu chuẩn phần cứng đi kèm được bảo hộ bởi giấy phép GNU AGPLv3.
 
 Điều này có nghĩa là:
 
