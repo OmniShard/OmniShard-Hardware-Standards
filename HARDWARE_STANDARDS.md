@@ -12,12 +12,12 @@ Tài liệu này quy định các yêu cầu kỹ thuật tối thiểu và khuy
 
 Hệ thống OmniShard chạy trên nền tảng Hyperledger Fabric, yêu cầu tài nguyên tính toán ổn định để xử lý các giao dịch mật mã ngưỡng.
 
-| Thành phần | Mức tối thiểu (Standard) | Khuyến nghị (Enterprise) |
+| Thành phần | Mức tối thiểu (Standard) |
 | :--- | :--- | :--- |
-| **CPU** | 8 Cores (Hỗ trợ AES-NI) | 16 Cores+ (Hỗ trợ Intel SGX/AMD SEV) |
-| **RAM** | 16GB DDR4 ECC | 32GB - 64GB DDR4/DDR5 ECC |
-| **Lưu trữ** | 500GB NVMe SSD (RAID 1) | 1TB+ Enterprise NVMe (RAID 10) |
-| **Hệ điều hành** | Ubuntu 22.04 LTS | Hardened Linux (RHEL/CentOS 9) |
+| **CPU** | 8 Cores (Hỗ trợ AES-NI)/ (Hỗ trợ Intel SGX/AMD SEV) |
+| **RAM** | 16GB-32GB DDR4/DDR5 ECC |
+| **Lưu trữ** | 500GB + Enterprise NVMe (RAID 10) |
+| **Hệ điều hành** | Ubuntu 22.04 LTS, Hardened Linux (RHEL/CentOS 9) |
 
 * **Lưu ý:** Ưu tiên sử dụng RAM ECC để ngăn ngừa lỗi bit trong quá trình tính toán mảnh khóa mật mã.
 
@@ -33,6 +33,8 @@ Hệ thống OmniShard chạy trên nền tảng Hyperledger Fabric, yêu cầu 
 
 ### Lựa chọn B: Cloud HSM / TEE (Dành cho tối ưu chi phí)
 * Sử dụng dịch vụ Cloud HSM từ các nhà cung cấp uy tín (Viettel IDC, FPT, AWS).
+* Chi phí 1 node	Peer: 2 core/4GB RAM, Orderer: 1 core/2GB, TSS: 0.5 core/512MB
+  Doanh nghiệp tham gia	1 máy chủ (4c/8GB), Docker, MSP cert, mở port 7051
 * Hoặc kích hoạt **Intel SGX (Trusted Execution Environment)** để cô lập quá trình xử lý mật mã Omni-Sharding trong vùng nhớ an toàn (Enclave).
 
 ---
