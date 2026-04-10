@@ -12,11 +12,10 @@ Tài liệu này quy định các yêu cầu kỹ thuật tối thiểu và khuy
 
 Hệ thống OmniShard chạy trên nền tảng Hyperledger Fabric, yêu cầu tài nguyên tính toán ổn định để xử lý các giao dịch mật mã ngưỡng.
 
-| Thành phần | Mức tối thiểu (Standard) |
-| :--- | :--- | :--- |
+
 | **CPU** | 8 Cores (Hỗ trợ AES-NI)/ (Hỗ trợ Intel SGX/AMD SEV) |
 | **RAM** | 16GB-32GB DDR4/DDR5 ECC |
-| **Lưu trữ** | 500GB + Enterprise NVMe (RAID 10) |
+| **Lưu trữ** | 500GB+ Enterprise NVMe (RAID 10) |
 | **Hệ điều hành** | Ubuntu 22.04 LTS, Hardened Linux (RHEL/CentOS 9) |
 
 * **Lưu ý:** Ưu tiên sử dụng RAM ECC để ngăn ngừa lỗi bit trong quá trình tính toán mảnh khóa mật mã.
